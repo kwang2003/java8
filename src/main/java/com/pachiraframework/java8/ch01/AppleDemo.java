@@ -16,6 +16,13 @@ public class AppleDemo {
 		System.out.println("#################");
 		greenApples = filterGreenApples2(invertory, Apple :: isGreen);
 		print(greenApples);
+		System.out.println("*****************");
+		sort(greenApples);
+		print(greenApples);
+	}
+	
+	private static void sort(List<Apple> apples) {
+		apples.sort((Apple a1,Apple a2)->a1.getWeight().compareTo(a2.getWeight()));
 	}
 	
 	private static void print(List<Apple> apples) {
@@ -55,7 +62,7 @@ public class AppleDemo {
 		List<Apple> invertory = Lists.newArrayList();
 		String[] colors = new String[] {"red","green"};
 		Random random = new Random();
-		for(int i =0;i < 100;i++) {
+		for(int i =0;i < 10;i++) {
 			Apple apple = new Apple(colors[random.nextInt(2)], random.nextInt(500));
 			invertory.add(apple);
 		}
@@ -70,10 +77,10 @@ public class AppleDemo {
 		private boolean isGreen() {
 			return "green".equals(this.color);
 		}
-		
-		private boolean isHeavyApple() {
-			return 150 > this.getWeight();
-		}
+//		
+//		private boolean isHeavyApple() {
+//			return 150 > this.getWeight();
+//		}
 	}
 	
 	private interface Predicate<T>{
