@@ -51,7 +51,7 @@ public class AppleDemo {
 	private static List<Apple> filterGreenApples(List<Apple> invertory){
 		List<Apple> result = Lists.newArrayList();
 		for(Apple apple : invertory) {
-			if(apple.getColor().equals("green")) {
+			if("green".equals(apple.getColor())) {
 				result.add(apple);
 			}
 		}
